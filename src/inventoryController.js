@@ -4,6 +4,10 @@ const inventoryPrices = require('.//data/inventoryPrices.json')
 const cart = require('../src/data/cart.json')
 const inform = console.log
 
+const index = (inventory) => {
+    return inventory.map((inventoryItem) => `${inventoryItem.id}: ${inventoryItem.name} ${inventoryItem.priceInCents} ${inventoryItem.inStock}`).join('\n')
+}
+
 const create = (inventory, inventoryItemName, priceInCents) => {
     const inventoryItem = {
         name: inventoryItemName,
@@ -15,6 +19,3 @@ const create = (inventory, inventoryItemName, priceInCents) => {
     return inventory
 }
 
-const index = (inventory) => {
-    return inventory.map((inventoryItem) => `${inventoryItem.id}: ${inventoryItem.name} ${inventoryItem.priceInCents} ${inventoryItem.inStock}`).join('\n')
-}

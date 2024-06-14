@@ -1,17 +1,20 @@
+const inform = console.log
 const { writeJsonFile, readJsonFile } = require('./src/helpers')
-let inform = console.log
+const { index, create, show, edit, destroy} = require('./src/inventoryController')
 
 function run() {
-const idky = process.argv[2]
-const idk = process.argv[3]
-let inventory = readJsonFile('','')
-let writeToFile = false
-let updatedCart = []
+    const action = process.argv[2]
+    const inventoryItem = process.argv[3]
+    let inventory = readJsonFile('./data', 'inventory.json')
+    let writeToFile = false
+    let updatedInventory = []
 
     switch(action) {
         case "index":
-            inform()
+            inform(index(inventory))
             break;
+        case "create":
+            inform(action, inventory)
     }
 }
 
