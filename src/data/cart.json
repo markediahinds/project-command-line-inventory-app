@@ -1,0 +1,21 @@
+[
+    {
+        "id": "FtH",
+        "priceInCents": 9000,
+        "name": "journal",
+        "inStock": true
+    },
+    {
+        "id": "KwX",
+        "priceInCents": 30000,
+        "name": "moon cycle calendar set",
+        "inStock": false
+    },
+    {
+        "id": "QxC",
+        "priceInCents": 6000,
+        "name": "mug",
+        "inStock": true
+    }
+]
+
