@@ -1,20 +1,48 @@
 const inform = console.log
-const { writeJsonFile, readJsonFile } = require('./src/helpers')
-const { index, create, show, edit, destroy} = require('./src/inventoryController')
+import { writeJsonFile, readJsonFile } from './src/helpers.js'
+import { index, create } from './src/inventoryController.js'
+
+
 
 function run() {
     const action = process.argv[2]
-    const inventoryItem = process.argv[3]
-    let inventory = readJsonFile('./data', 'inventory.json')
+    let inventoryItem = '' 
+    let inventory = readJsonFile('./src/data', 'inventory.json')
     let writeToFile = false
     let updatedInventory = []
-
+    
     switch(action) {
         case "index":
-            inform(index(inventory))
+            const inventoryList = index(inventory)
+            inform(inventoryList)
             break;
         case "create":
-            inform(action, inventory)
+            inventoryItem = process.argv[3]
+            updatedInventory = create(inventory, inventoryItem)
+            writeToFile = true
+            break;
+        case "show":
+            inventoryItem = process.argv[3] 
+            const displayInventoryItem = show(inventory, inventoryItem)
+            inform(displayInventoryItem)
+            break;
+        case "edit":
+            inventoryItem = process.argv[3] 
+            updatedInventory = edit(inventory, inventoryItem, process.argv[4])
+            writeToFile = true
+            break;
+        case "destroy":
+            updatedInventory = destroy(inventory, inventoryItem)
+            writeToFile = true
+            break;
+        // case "total": 
+        //      const total = 
+                inform
+        default: 
+        inform('There was an error')
+    }
+    if(writeToFile) {
+        writeJsonFile('./src/data', 'inventory.json', updatedInventory)
     }
 }
 

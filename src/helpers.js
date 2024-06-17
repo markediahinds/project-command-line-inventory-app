@@ -1,7 +1,7 @@
 // readJsonFile & write (2 func) (pull appropriate files)
 // file path, utf, etc. 
 
-const { writeFileSync, readFileSync } = require('node:fs')
+import { writeFileSync, readFileSync } from 'node:fs'
 
 const writeJsonFile = (path, fileName, data) => {
     data = JSON.stringify(data, 0, 2)
@@ -13,4 +13,4 @@ const readJsonFile = (path, fileName) => {
     return data ? JSON.parse(data) : []
 }
 
-module.exports = { writeJsonFile, readJsonFile }
+export { writeJsonFile, readJsonFile }

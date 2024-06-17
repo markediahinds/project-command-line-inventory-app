@@ -1,25 +1,32 @@
 [
-    {
-        "id": "FtH",
-        "priceInCents": 900,
-        "name": "journal",
-        "inStock": true
-    },
-    {
-        "id": "KwX",
-        "priceInCents": 3000,
-        "name": "calendar",
-        "inStock": false
-    },
-    {
-        "id": "QxC",
-        "priceInCents": 600,
-        "name": "mug",
-        "inStock": true
-    }
+  {
+    "id": "FtH",
+    "priceInCents": 900,
+    "name": "journal",
+    "inStock": true
+  },
+  {
+    "id": "KwX",
+    "priceInCents": 3000,
+    "name": "calendar",
+    "inStock": false
+  },
+  {
+    "id": "QxC",
+    "priceInCents": 600,
+    "name": "mug",
+    "inStock": true
+  },
+  {
+    "name": "chair",
+    "id": "xp7",
+    "priceInCents": 1780,
+    "inStock": false
+  },
+  {
+    "name": "chair",
+    "id": "9bW",
+    "priceInCents": 141,
+    "inStock": false
+  }
 ]
-
-
- // const dollars = (inventory[priceInCents] / 100).toLocaleString("en-US", {style:"currency", currency:"USD"})
-
- // convert to BTC
